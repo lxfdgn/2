@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>靓仔的网站</title>
+<embed src="1.mp3" hidden="true" autostart="true" loop="true"> 
+ <link rel="apple-touch-icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: gainsboro;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        #datetime {
+            font-size: 6rem;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .bookmarks {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 12%;
+            padding: 0 20%;
+        }
+
+        .bookmark {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .bookmark:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateY(-10px);
+        }
+
+        .bookmark img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .bookmarks {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0;
+            }
+
+            .bookmark {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+
+  
+<div id="datetime">
+        Loading
+    </div>
+    <nav class="bookmarks">
+        <a class="bookmark" href="https://www.bilibili.com/">
+            <img src="./assets/bilibili.png" alt="哔哩哔哩">
+            哔哩哔哩
+        </a>
+        <a class="bookmark" href="https://www.facebook.com/people/Angus-Angus/100073551253093/">
+            <img src="./assets/facebook.png" alt="facebook">
+            facebook</a>
+        <a class="bookmark" href="https://github.com/lxfdgn/lxfdgn.github.io">
+            <img src="./assets/github.png" alt="github">
+            github</a>
+        <a class="bookmark" href="./html/email.html">
+            <img src="./assets/邮箱.png" alt="email">
+           email</a>
+        <a class="bookmark" href="./html/ziyuan.html">
+            <img src="./assets/资源.png" alt="资源">
+            资源</a>
+        <a class="bookmark" href="./html/yvle.html">
+            <img src="./assets/娱乐.png" alt="娱乐">
+           娱乐</a>
+        <a class="bookmark" href="./2_1_on-the-sea/index - 副本.html">
+            <img src="./assets/时间.png" alt="限定">
+            限定</a>
+        <a class="bookmark" href="./html/guanyu.html">
+            <img src="./assets/更多.png" alt="更多">
+            更多</a>
+    </nav>
+    <script>
+        var datetimeEl = document.querySelector('#datetime')
+        function setCurrentTime() {
+            var hours = ('0' + (new Date()).getHours()).slice(-2)
+            var mins = ('0' + (new Date()).getMinutes()).slice(-2)
+            datetimeEl.innerHTML = `${hours}:${mins}`
+        }
+
+        setCurrentTime()
+
+        setInterval(function () {
+            setCurrentTime()
+        }, 5000)
+
+        function getBingWallpaper(resp) {
+            const url = 'https://cn.bing.com' + resp.images[0].url
+            const bodyEl = document.querySelector('body')
+            bodyEl.style.backgroundImage = `url(${url})`
+        }
+</script>
+    <script src="https://bing-wallpaper-jsonp.herokuapp.com/?format=js&callback=getBingWallpaper"></script>
+<body>
+<center>
+<p id='top'></p> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p class="footer__copyright" _msthash="1193816" _msttexthash="183950"> 2022 靓仔的网站 </p>
+<br>
+</body>
+
+</html>
